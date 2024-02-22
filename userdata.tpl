@@ -78,4 +78,4 @@ sudo systemctl start mariadb
 sudo systemctl enable mariadb
 
 cd /var/www/html
-sudo aws s3 sync s3://restartproject/ .
+#sudo aws s3 sync s3://restartproject/ .
