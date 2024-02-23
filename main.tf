@@ -59,20 +59,20 @@ resource "aws_internet_gateway" "igw" {
   }
 }
 
-# Allocate Elastic IP for NAT Gateway
-# resource "aws_eip" "nat_eip" {
-#   vpc = true
-# }
+Allocate Elastic IP for NAT Gateway
+resource "aws_eip" "nat_eip" {
+  vpc = true
+}
 
-# Create a NAT Gateway for the private subnet(s) to access the internet
-# resource "aws_nat_gateway" "nat" {
-#   allocation_id = aws_eip.nat_eip.id
-#   subnet_id = aws_subnet.public-1.id # Reference public subnet ID
+Create a NAT Gateway for the private subnet(s) to access the internet
+resource "aws_nat_gateway" "nat" {
+  allocation_id = aws_eip.nat_eip.id
+  subnet_id = aws_subnet.public-1.id # Reference public subnet ID
 
-#   tags = {
-#     Name = "nat-gw" 
-#   }
-# }
+  tags = {
+    Name = "nat-gw" 
+  }
+}
 
 resource "aws_route_table" "RB_Public_RouteTable" {
   vpc_id = aws_vpc.dev_vpc.id
