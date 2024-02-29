@@ -1,4 +1,4 @@
-# Create a VPC to launch our instances into
+/* # Create a VPC to launch our instances into
 resource "aws_vpc" "dev_vpc" {
   cidr_block = "10.0.0.0/16"  
   enable_dns_hostnames = true 
@@ -119,4 +119,4 @@ resource "aws_route_table_association" "Private_Subnet2_Asso" {
   route_table_id = aws_route_table.RB_Private_RouteTable.id
   subnet_id      = aws_subnet.private-2.id
   depends_on     = [aws_route_table.RB_Private_RouteTable, aws_subnet.private-2]
-}
+} */
