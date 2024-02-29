@@ -1,7 +1,7 @@
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
-  name = "my-vpc"
+  name = "my-vpc-development"
   cidr = "10.0.0.0/16"
 
   azs             = ["us-east-1a", "us-east-1b", "us-east-1c"]
@@ -20,7 +20,7 @@ module "vpc" {
 module "vpc-qa" {
   source = "terraform-aws-modules/vpc/aws"
 
-  name = "my-vpc1"
+  name = "my-vpc-qa"
   cidr = "10.0.0.0/20"
 
   azs             = ["us-east-1a", "us-east-1b", "us-east-1c"]
